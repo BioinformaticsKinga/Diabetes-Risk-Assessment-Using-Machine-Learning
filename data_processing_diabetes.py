@@ -20,6 +20,6 @@ for col in cat_cols:
     label_encoders[col] = le
 
 # Saving processed data to a new file
-df.to_csv('/path/to/output/processed_diabetes_data.csv', index=False)
+df.to_csv('processed_diabetes_data.csv', index=False)
 
 print("Preprocessing complete, data saved to file.")
