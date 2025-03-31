@@ -1,4 +1,4 @@
-# Diabetes-Risk-Assessment-Using-Machine-Learning
+# Diabetes Risk Assessment Using Machine Learning
 # Project Overview
 This project describes a bioinformatics-based pipeline aimed at predicting the risk of diabetes using a machine learning approach. The goal of this analysis is to identify individuals who may be at risk of developing diabetes based on various features such as age, BMI, blood pressure, glucose levels, and more. The pipeline focuses on data preprocessing, training machine learning models, evaluating their performance, and identifying important risk factors.
 
