@@ -16,7 +16,7 @@ grid_search = GridSearchCV(KNeighborsClassifier(), param_grid, cv=5)
 grid_search.fit(X_train, y_train)
 
 # It is the best model
-the_best_model = grid_search.best_estimator_
+the_best_model_knn = grid_search.best_estimator_
 
 # It is prediction
 y_the_best_prediction = best_knn_model.predict(X_test)
