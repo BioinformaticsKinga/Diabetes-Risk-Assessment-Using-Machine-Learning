@@ -4,7 +4,7 @@ import pandas as pd
 from sklearn.impute import SimpleImputer 
 from sklearn.preprocessing import LabelEncoder
 
-# I downloaded date from website pima-indians-diabetes
+# I downloaded date  pima-indians-diabetes from website
 data_url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv"
 columns = ["Pregnancies", "Glucose", "BloodPressure", "SkinThickness", "Insulin", 
            "BMI", "DiabetesPedigreeFunction", "Age", "Outcome"]
