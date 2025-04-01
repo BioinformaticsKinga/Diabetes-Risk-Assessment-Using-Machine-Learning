@@ -1,5 +1,7 @@
+#This is the preparation of data for further analysis
+
 import pandas as pd
-from sklearn.impute import SimpleImputer
+from sklearn.impute import SimpleImputer 
 from sklearn.preprocessing import LabelEncoder
 
 file_path = 'diabetes_data_zyg.csv'
