@@ -1,3 +1,4 @@
+# data_preprocessing.py
 import pandas as pd
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import LabelEncoder
@@ -7,11 +8,13 @@ file_path = 'diabetes_data.csv'
 data = pd.read_csv(file_path)
 
 # Handle missing values (mean imputation for numerical columns)
+# Here we replace missing values with the mean of each column
 imputer = SimpleImputer(strategy='mean')
 numeric_columns = data.select_dtypes(include=['float64', 'int64']).columns
 data[numeric_columns] = imputer.fit_transform(data[numeric_columns])
 
 # Encode categorical variables
+# Categorical variables are converted into numerical values using LabelEncoder
 label_encoders = {}
 categorical_columns = data.select_dtypes(include=['object']).columns
 for column in categorical_columns:
