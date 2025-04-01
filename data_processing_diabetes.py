@@ -4,22 +4,23 @@ from sklearn.preprocessing import LabelEncoder
 
 # Load the dataset
 file_path = 'diabetes_data.csv'
-df = pd.read_csv(file_path)
+data = pd.read_csv(file_path)
 
-# Impute missing data
+# Handle missing values (mean imputation for numerical columns)
 imputer = SimpleImputer(strategy='mean')
-num_cols = df.select_dtypes(include=['float64', 'int64']).columns
-df[num_cols] = imputer.fit_transform(df[num_cols])
+numeric_columns = data.select_dtypes(include=['float64', 'int64']).columns
+data[numeric_columns] = imputer.fit_transform(data[numeric_columns])
 
-# Encoding categorical variables
+# Encode categorical variables
 label_encoders = {}
-cat_cols = df.select_dtypes(include=['object']).columns
-for col in cat_cols:
-    le = LabelEncoder()
-    df[col] = le.fit_transform(df[col].astype(str))
-    label_encoders[col] = le
+categorical_columns = data.select_dtypes(include=['object']).columns
+for column in categorical_columns:
+    encoder = LabelEncoder()
+    data[column] = encoder.fit_transform(data[column].astype(str))
+    label_encoders[column] = encoder
 
-# Saving processed data to a new file
-df.to_csv('processed_diabetes_data.csv', index=False)
+# Save the processed data to a file
+output_path = 'processed_diabetes_data.csv'
+data.to_csv(output_path, index=False)
 
-print("Preprocessing complete, data saved to file.")
+print("Processing complete. Data saved to file.")
